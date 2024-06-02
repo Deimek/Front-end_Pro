@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework_4.3</title>
+</head>
+
+<body>
+    <script>
+        let myBirthYear = prompt("Enter your birth year");
+        let myCity = prompt("Enter your city: Kyiv, Washington, London");
+        let mySport = prompt("Enter your favorite sport");
+        let date = 2024;
+        let myAge = date - +myBirthYear;
+
+        alert(`Your age is: ${myAge}`);
+        console.log(mySport);
+
+        if (myCity === "Kyiv") {
+            alert(`Ти живеш у столиці України`);
+        } else if (myCity === "Washington") {
+            alert(`Ти живеш у столиці США`);
+        } else if (myCity === "London") {
+            alert(`Ти живеш у столиці Англії`);
+        } else {
+            alert("Please enter a valid city");
+        }
+    </script>
+</body>
+
+</html>
