@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <homework_7 class="1"></homework_7>
+    </title>
+</head>
+
+<body>
+    <script>
+
+        function sum() {
+            let mySum = 0;
+
+            return function (num) {
+                mySum += num;
+                return mySum;
+            };
+        }
+
+        let result = sum();
+        let number;
+
+        while (true) {
+            number = prompt('Enter your number');
+            if (number === null || number === '') {
+                break;
+            }
+
+            let newNumber = +number;
+
+            console.log(result(newNumber));
+
+        }
+
+    </script>
+</body>
+
+</html>
