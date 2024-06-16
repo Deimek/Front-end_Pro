@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework_8</title>
+</head>
+
+<body>
+    <script>
+
+        // let step = 0;
+
+        // let ladder = {
+
+        //     up: function () {
+        //         step++;// підніматиме вас на одну сходинку
+        //     },
+        //     down: function () {
+        //         step--;// опускатиме вас на одну сходинку
+        //     },
+        //     showStep: function () {
+        //         console.log(step);// показує поточну сходинку
+        //     }
+        // };
+        // ladder.up();
+
+        // ladder.up();
+
+        // ladder.down();
+
+        // ladder.showStep(); // 1
+
+
+        let step = 0;
+
+        let ladder = {
+            step: 0,
+
+            up: function () {
+                step++;
+                return ladder;
+            },
+
+            down: function () {
+                step--;
+                return ladder;
+            },
+
+            showStep: function () {
+                console.log(step);
+                return ladder;
+            }
+        };
+
+        ladder.up().up().down().showStep(); // 1
+
+    </script>
+</body>
+
+</html>
