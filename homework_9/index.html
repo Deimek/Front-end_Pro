@@ -29,12 +29,12 @@
             let sum = 0;
 
             if (Array.isArray(department)) {
-                // Якщо department є масивом, то додаємо всі зарплати з цього масиву
+
                 for (let unit of department) {
                     sum += unit.salary;
                 }
             } else {
-                // Якщо department не є масивом, то це об'єкт, і ми проходимося по кожному піддепартаменту
+
                 for (let subDepartment in department) {
                     sum += salarySum(department[subDepartment]);
                 }
