@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework_9</title>
+</head>
+
+<body>
+    <Script>
+
+        let company = {
+            sales: [
+                { name: 'John', salary: 1000 },
+                { name: 'Alice', salary: 600 }
+            ],
+            development: {
+                web: [
+                    { name: 'Peter', salary: 2000 },
+                    { name: 'Alex', salary: 1800 }
+                ],
+                internals: [
+                    { name: 'Jack', salary: 1300 }
+                ]
+            }
+        };
+        function salarySum(department) {
+            let sum = 0;
+
+            if (Array.isArray(department)) {
+                // Якщо department є масивом, то додаємо всі зарплати з цього масиву
+                for (let unit of department) {
+                    sum += unit.salary;
+                }
+            } else {
+                // Якщо department не є масивом, то це об'єкт, і ми проходимося по кожному піддепартаменту
+                for (let subDepartment in department) {
+                    sum += salarySum(department[subDepartment]);
+                }
+            }
+
+            return sum;
+        }
+
+        let sumSalary = salarySum(company);
+        console.log(sumSalary);
+
+
+        // function User(age, name, lastName, role) {
+
+        //     this.age = age;
+        //     this.name = name;
+        //     this.lastName = lastName;
+        //     this.role = role;
+        //     this.status = "acktive";
+        //     this.sayHi = function () {
+        //         console.log(`Hello ${this.name}`)
+        //     }
+
+        // }
+
+        // const userOne = new User(39, 'Oleh', 'Deimek', 'student');
+        // console.log(userOne);
+        // const userTwo = new User(35, 'Vitaliy', 'Deimek', 'student');
+        // console.log(userTwo);
+        // const userThree = new User(33, 'Julia', 'Vaisblat', 'student');
+        // console.log(userThree);
+
+        // userTwo.sayHi();
+
+        // let person = {
+        //     name: 'Olga',
+        // }
+        // userOne.sayHi.call(person);
+
+    </Script>
+
+</body>
+
+</html>

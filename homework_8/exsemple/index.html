@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let user = {
+
+            age: 39,
+            name: 'Oleh',
+            role: 'student',
+            sayHi: function () {
+                console.log(`Hi  ${this.name} !!!`);
+            },
+
+        }
+
+        user.sayHi();
+
+        let person = {
+            age: 33,
+            name: 'Juli',
+
+        }
+
+        user.sayHi.call(person);
+
+        // -----------------------------------------
+
+        function sayName(name) {
+            console.log(`By ${name}`);
+        }
+
+
+        let otherPerson = {
+            name: 'Oleh',
+
+            sayName: function () {
+                sayName.call(this, this.name);
+            },
+
+        }
+
+        otherPerson.sayName();
+
+    </script>
+</body>
+
+</html>

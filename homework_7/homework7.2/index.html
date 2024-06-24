@@ -21,6 +21,19 @@
         let result = name(5)(2);
         console.log(result); // Виводить 10
 
+        // -----------------------
+
+        function name1(a) {
+            return function (b) {
+                return function (c) {
+                    return a + b + c;
+                }
+            };
+        }
+
+        let result1 = name1(6)(2)(9);
+        console.log(result1);
+
 
     </script>
 </body>
