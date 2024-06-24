@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework_10.3</title>
+</head>
+
+<body>
+    <div>
+        Створіть об'єкт, який матиме одну властивість з масивом об'єктів. Які представляють контакти у вашій контактній
+        книзі. Кожен об'єкт має містити ім'я, номер телефону та адресу електронної пошти. Додайте метод для пошуку
+        контакту за ім'ям та метод для додавання нових контактів.
+    </div>
+
+    <Script>
+
+        const myObj = {
+            arr: [
+                {
+                    name: 'Oleh',
+                    tel: '777222111',
+                    email: 'oleh@gmail.com'
+                },
+                {
+                    name: 'Alex',
+                    tel: '777222222',
+                    email: 'alex@gmail.com'
+                },
+                {
+                    name: 'Anton',
+                    tel: '777222333',
+                    email: 'anton@gmail.com'
+                }
+            ],
+
+            find: function (name) {
+                return this.arr.find(arr => arr.name.toLowerCase() === name.toLowerCase());
+            },
+
+            add: function (name, tel, email) {
+                this.arr.push({ name, tel, email });
+            }
+        };
+
+        console.log(myObj.find('Oleh'));
+
+
+        myObj.add('Vitaliy', '777222444', 'vitaliy@gmail.com');
+
+        console.log(myObj.arr);
+
+
+
+    </Script>
+
+</body>
+
+</html>
