@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Піфагорова таблиця</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="pifagor-table"></table>
+
+    <script>
+        function createPifagorTable(size) {
+            const table = document.getElementById('pifagor-table');
+
+            let headerRow = '<tr><th></th>';
+            for (let i = 1; i <= size; i++) {
+                headerRow += `<th>${i}</th>`;
+            }
+            headerRow += '</tr>';
+            table.innerHTML = headerRow;
+
+            for (let i = 1; i <= size; i++) {
+                let row = `<tr><th>${i}</th>`;
+                for (let j = 1; j <= size; j++) {
+                    row += `<td>${i * j}</td>`;
+                }
+                row += '</tr>';
+                table.innerHTML += row;
+            }
+        }
+
+        createPifagorTable(10);
+    </script>
+</body>
+
+</html>

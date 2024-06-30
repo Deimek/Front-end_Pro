@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework_11.1</title>
+    <style>
+        .div {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        Є блок із текстом на сторінці та кнопку.
+        При натисканні на кнопку текст змінює колір.
+        При повторному натисканні
+        – повертається попередній колір
+    </div>
+
+    <button class="js-btn">color</button>
+
+    <Script>
+        const divEl = document.getElementById('div');
+        const btnEl = document.querySelector('.js-btn');
+
+        function colorChange() {
+            divEl.classList.toggle('div');
+
+        }
+
+        btnEl.addEventListener('click', colorChange);
+
+
+
+    </Script>
+
+</body>

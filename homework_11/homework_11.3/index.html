@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image</title>
+</head>
+
+<body>
+    <h1>
+        Покласти в папку будь-які зображення
+        1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg, 6.jpg, 7.jpg, 8.jpg, 9.jpg. Вивести
+        зображення, отримане випадковим чином (Math.random)
+    </h1>
+
+    <img id="random-image" src="" style="max-width: 100%; height: auto;">
+
+    <script>
+
+        const images = [
+            'images/1.jpg',
+            'images/2.jpg',
+            'images/3.jpg',
+            'images/4.jpg',
+            'images/5.jpg',
+            'images/6.jpg',
+            'images/7.jpg',
+            'images/8.jpg',
+            'images/9.jpg'
+        ];
+
+        function getRandomIndex(arr) {
+            return Math.floor(Math.random() * arr.length);
+        }
+
+        const randomImage = images[getRandomIndex(images)];
+
+        document.getElementById('random-image').src = randomImage;
+    </script>
+</body>
+
+</html>
