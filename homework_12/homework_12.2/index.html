@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 11.1</title>
+</head>
+
+<body>
+    <h6>
+        На сторінці є дві кнопки. При натисканні на першу кнопку
+        користувач повинен ввести в prompt посилання, при
+        натисканні на другу – переадресовується на інший сайт
+        (за раніше введеним посиланням).
+    </h6>
+
+    <button class="js-btn-prompt">Введіть посилання</button>
+    <button class="js-btn-href">Перейти за посиланням</button>
+
+    <script>
+        // Знаходження кнопок
+        const btnPrompt = document.querySelector('.js-btn-prompt');
+        const btnHref = document.querySelector('.js-btn-href');
+
+        // Змінна для зберігання посилання
+        let link = '';
+
+        // Функція для отримання посилання від користувача
+        function funcPrompt() {
+            link = prompt('Введіть ваше посилання', 'https://www.google.com');
+        }
+
+        // Функція для переходу за посиланням
+        function funcHref() {
+            if (link) {
+                window.location.href = link;
+            } else {
+                alert('Будь ласка, введіть посилання спочатку.');
+            }
+        }
+
+        // Додавання обробників подій до кнопок
+        btnPrompt.addEventListener('click', funcPrompt);
+        btnHref.addEventListener('click', funcHref);
+    </script>
+</body>
+
+</html>

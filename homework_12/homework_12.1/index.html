@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework_12.1</title>
+</head>
+
+<body>
+    <h6>
+        На сторінці є дві кнопки. При натисканні на першу кнопку
+        користувач повинен ввести в prompt посилання, при
+        натисканні на другу – переадресовується на інший сайт
+        (за раніше введеним посиланням).
+    </h6>
+
+    <button class="js-btn-prompt">click</button>
+
+    <button class="js-btn-href">click</button>
+
+    <script>
+
+        const btnPrompt = document.querySelector('.js-btn-prompt');
+        const btnHref = document.querySelector('.js-btn-href');
+
+        let link = '';
+
+        function funcPrompt() {
+            link = prompt('enter your link', 'https://www.google.com');
+        }
+
+        btnPrompt.addEventListener('click', funcPrompt);
+
+
+        function funcHref() {
+
+            window.location.href = link;
+
+        }
+
+        btnHref.addEventListener('click', funcHref);
+
+    </script>
+</body>
+
+</html>
