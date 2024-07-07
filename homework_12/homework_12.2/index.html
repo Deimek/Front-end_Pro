@@ -13,10 +13,35 @@
         елементу, який відслідковуватиме кліки на всіх кнопках.
     </h6>
 
-
+    <div class="div-el">
+        <button id="1">btn1</button>
+        <button id="2">btn2</button>
+        <button id="3">btn3</button>
+    </div>
 
     <script>
 
+        const myDiv = document.querySelector('.div-el');
+
+
+
+        // myDiv.addEventListener('click', function () {
+        //     console.log('click');
+        // });
+
+        myDiv.addEventListener('click', function (event) {
+            // console.log(event);
+
+            if (event.target.id === '1') {
+                console.log('click on btn1');
+            }
+            if (event.target.id === '2') {
+                console.log('click on btn2');
+            }
+            if (event.target.id === '3') {
+                console.log('click on btn3');
+            }
+        })
 
     </script>
 </body>
