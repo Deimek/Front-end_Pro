@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 12.3</title>
+</head>
+
+<body>
+    <h5>
+        Створіть HTML-сторінку, яка містить список завдань (to-do list) з можливістю додавання нових завдань.
+        Ваше ціль - використовуючи делегування подій, створити обробник подій для списку завдань,
+        який дозволить видаляти завдання при кліку на них.
+    </h5>
+
+    <ul class="ul-el">
+        TO DO List
+    </ul>
+
+    <input type="text" id="add-task">
+
+    <button class="button">ADD</button>
+
+    <script>
+        const ulEl = document.querySelector('.ul-el');
+        const inputEl = document.getElementById('add-task');
+        const btnEl = document.querySelector('.button');
+
+        btnEl.addEventListener('click', function () {
+            const inputValue = inputEl.value;
+            if (inputValue.length > 0) {
+                // create li
+                const li = document.createElement('li');
+                // add text to li
+                li.textContent = inputValue;
+                // create delete btn
+                const delBtn = document.createElement('button');
+                delBtn.textContent = 'Delete';
+                // add btn to li
+                li.append(delBtn);
+                // add li to ul
+                ulEl.append(li);
+
+                inputEl.value = '';
+
+                // delBtn.addEventListener('click', function () {
+                //     ulEl.removeChild(li);
+                // });
+
+
+            }
+        });
+        // використати делегування addEventListenter to UL to listen the delete btn
+
+
+        ulEl.addEventListener('click', function (event) {
+
+            if (event.target.tagName === 'BUTTON' && event.target.textContent === 'Delete') {
+                const li = event.target.parentElement;
+                li.remove();
+            }
+        });
+
+    </script>
+</body>
+
+</html>
